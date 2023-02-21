@@ -8,42 +8,40 @@ namespace LocalMaximum
         {
             Console.WriteLine("В ведите размер массива");
 
-            int countElement = Convert.ToInt32(Console.ReadLine());
-            int[] arrayNumbers = new int[countElement];
+            int elements = Convert.ToInt32(Console.ReadLine());
+            int[] numbers = new int[elements];
             int minNumber = 0;
             int maxNumber = 100;
-            int N;
-            N = countElement;
 
             Random random = new Random();
 
-            for (int i = 0; i < countElement; i++)
+            for (int i = 0; i < elements; i++)
             {
-                arrayNumbers[i] = random.Next(minNumber, maxNumber);
+                numbers[i] = random.Next(minNumber, maxNumber);
             }
 
-            for (int i = 0; i < countElement; i++)
+            for (int i = 0; i < elements; i++)
             {
-                Console.Write(arrayNumbers[i] + "\t");
+                Console.Write(numbers[i] + "\t");
             }
 
             Console.WriteLine();
 
-            if (arrayNumbers[0] > arrayNumbers[1])
+            if (numbers[0] > numbers[1])
             {
-                Console.WriteLine(arrayNumbers[0]);
+                Console.WriteLine(numbers[0]);
             }
 
-            if (arrayNumbers[N - 1] > arrayNumbers[N-2])
+            if (numbers[elements - 1] > numbers[elements-2])
             {
-                Console.WriteLine(arrayNumbers[N-1]);
+                Console.WriteLine(numbers[elements-1]);
             }
 
-            for (int j = 1; j < countElement - 1; j++)
+            for (int j = 1; j < elements - 1; j++)
             {
-                if (arrayNumbers[j] > arrayNumbers[j - 1] && arrayNumbers[j] > arrayNumbers[j + 1])
+                if (numbers[j] > numbers[j - 1] && numbers[j] > numbers[j + 1])
                 {
-                    Console.WriteLine($"{arrayNumbers[j-1]} {arrayNumbers[j]} {arrayNumbers[j+1]}");
+                    Console.WriteLine($"{numbers[j-1]} {numbers[j]} {numbers[j+1]}");
                 }
             }
         }
